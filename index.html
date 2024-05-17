@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .h1{
+            font-weight: bold;
+            margin:60px auto;
+            font-size: large;
+            width: 30%;
+            border: 1px solid gray;
+            border-radius: 10px;
+            /* background-image: url(https://cdn4.sharechat.com/img_561733_3069ad75_1676468559155_sc.jpg?tenant=sc&referrer=pwa-sharechat-service&f=155_sc.jpg);  */
+            /* background-image: url(https://images.pexels.com/photos/666737/pexels-photo-666737.jpeg?auto=compress&cs=tinysrgb&w=600); */
+            background-image: url(https://images.pexels.com/photos/210243/pexels-photo-210243.jpeg?auto=compress&cs=tinysrgb&w=600);
+            background-repeat: no-repeat;
+            background-size: cover;
+            box-shadow: rgb(0, 0, 0) 0px 2px 4px 0px, rgb(14, 29, 36) 0px 2px 16px 0px;
+           
+        }
+        h1{
+            text-align: center;
+            background-color: rgb(245, 240, 248);
+            width: 78%;
+            margin: 30px auto;
+            border-radius: 5px;
+            color: rgb(1, 62, 247);
+            border: 2px solid rgb(5, 63, 250);
+        }
+        form{
+            /* border: 1px solid gray; */
+            width: 80%;
+            margin: auto;
+        }
+        label{
+            font-size: x-large;
+            font-weight: bold;
+            color: rgb(0, 255, 179);
+        
+        }
+        input{
+            width: 95%;
+            padding: 7px;
+            font-weight: bold;
+            font-size: large;
+            font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            border-radius: 5px;
+            background-color: rgb(233, 233, 233);
+            /* background-color: rgb(241, 211, 255); */
+            border: 2px solid rgb(5, 63, 250);
+            
+        }
+        select{
+            padding: 7px;
+            width: 99%;
+            border-radius: 5px;
+            background-color: rgb(233, 233, 233);
+            /* background-color: rgb(241, 211, 255); */
+            border: 2px solid rgb(5, 63, 250);
+            font-size: large;
+            font-weight: bold;
+            font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        #Address{
+            padding: 20px;
+            width: 89%;
+            border-radius: 5px;
+            /* background-color: rgb(241, 211, 255); */
+            background-color: rgb(233, 233, 233);
+            border: 2px solid rgb(8, 78, 230);
+            font-size: large;
+            font-weight: bold;
+            font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        .btn{
+            text-align: center;
+            padding: 20px;
+
+        }
+        #btn{
+            padding: 5px 15px;
+            width: 40%;
+            background-color: rgb(68, 250, 78);
+            border: 2px solid gray;
+            font-size: large;
+            font-weight: bold;
+            font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            border-radius: 5px;
+        }
+        #btn:hover{
+            cursor: pointer;
+            background-color: lightgreen;
+            color: lightcoral;
+        }
+        @media screen and (min-width:200px) and (max-width:500px) {
+            .h1{
+           
+            margin:0px auto;
+            font-size: small;
+            width: 95%;
+            
+        }
+        h1{
+            
+            width: 90%;
+            margin: 30px auto;
+            
+        }
+        form{
+            /* border: 1px solid gray; */
+            width: 90%;
+            margin: auto;
+        }
+        select{
+            padding: 7px;
+            width: 100%;
+        }
+        #Address{
+            padding: 20px;
+            width: 86%;
+    }
+}
+@media screen and (min-width:501px) and (max-width:980px) {
+            .h1{
+           
+            margin:30px auto;
+            font-size: small;
+            width: 91%;
+            
+        }
+        h1{
+            
+            width: 88%;
+            margin: 30px auto;
+            
+        }
+        form{
+            /* border: 1px solid gray; */
+            width: 94%;
+            margin: auto;
+        }
+        select{
+            padding: 7px;
+            width: 97%;
+        }
+        #Address{
+            padding: 20px;
+            width: 91%;
+    }
+}
+    </style>
+</head>
+<body>
+   
+       <div class="h1"><h1>Registration Form</h1><div> 
+  <form id="form">
+    <label for="">Name:</label><br><input type="text" placeholder="Enter your Name" name="" id="name"><br><br>
+    <label for="">Mobile:</label><br> <input type="text" placeholder="Enter your Mobile no." id="Mobile"><br><br>
+    <label for="">Email:</label><br><input type="email" placeholder="Enter your Email" id="email" ><br><br>
+    <label for="">city:</label><br>
+    <select id="city">
+        <option>select</option>
+        <option>Jaipur</option>
+        <option>Ajmer</option>
+        <option>Sikar</option>
+        <option>Alwar</option>
+        <option>Bikaner</option>
+    </select><br><br>
+    <label for="">Address:</label><br>
+    <textarea name="" id="Address" placeholder="Enter your Text"></textarea><br><br>
+    <div class="btn">
+        <button id="btn">Submit</button>
+    </div>
+  </form>
+   
+</body>
+<script>
+    let arr =[];
+    let form =document.getElementById("form");
+
+    let btn= document.getElementById("btn");
+    btn.addEventListener("click",getData);
+
+    function getData(event) {
+        event.preventDefault();
+        let obj ={
+            name:document.getElementById("name").value,
+            mobile:document.getElementById("Mobile").value,
+            Email:document.getElementById("email").value,
+            city:document.getElementById("city").value,
+            address:document.getElementById("Address").value,
+        };
+        arr.push(obj);
+        console.log(arr);
+        form.reset();
+    }
+   
+
+</script>
+</html>
